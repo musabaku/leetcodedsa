@@ -5,9 +5,8 @@ class Solution {
      int min = Integer.MAX_VALUE;
      while(l<=r){
         int mid = l + (r-l)/2;
-        if(l==0&&r==nums.length-1){
-        min = nums[mid];
-        }
+        min = Math.min(min,nums[mid]);
+
         if(min>nums[mid]){
             min = nums[mid];
         }
