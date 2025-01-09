@@ -28,13 +28,10 @@ class Solution {
 
     }
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
-         if(subRoot==null&&root==null){
-            return true;
-        }
-           if(subRoot==null||root==null){
+      if(root==null){
             return false;
         }
        if(helper(root,subRoot)) return true;
-        return helper(root.left,subRoot) || helper(root.right,subRoot);
+        return isSubtree(root.left,subRoot) || isSubtree(root.right,subRoot);
     }
 }
